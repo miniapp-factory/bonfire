@@ -11,7 +11,7 @@ export interface GameState {
   cooldownEnd: number;
 }
 
-const stateFile = join(process.cwd(), 'lib', 'state.json');
+const stateFile = '/var/lib/mini-app/state.json';
 
 export async function getState(): Promise<GameState> {
   try {

@@ -115,6 +115,7 @@ in
         User = "xnode-miniapp-template";
         Group = "xnode-miniapp-template";
         CacheDirectory = "mini-app";
+        StateDirectory = "mini-app";
       };
     };
 
