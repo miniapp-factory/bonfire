@@ -70,7 +70,7 @@ export async function updateGame(): Promise<void> {
   const state = await getState();
   const now = Date.now();
   if (now - state.lastUpdate < 900) return;
-  const delta = (now - state.lastUpdate) / 1000;
+  const delta = 1;
   if (state.woodInFire > 0) {
     const consume = state.fireSize * 0.1 * delta;
     state.woodInFire = Math.max(0, state.woodInFire - consume);
