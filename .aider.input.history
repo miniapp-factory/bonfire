@@ -88,3 +88,9 @@
 
 # 2025-11-24 15:01:27.958435
 +In mini-app/components/game.tsx you are making a GET call for update, but this should be POST
+
+# 2025-11-24 15:45:34.151384
++In updateGame in mini-app/lib/state.ts make delta fixed 1 second instead of based on lastUpdate
+
+# 2025-11-24 15:45:34.151787
++In updateGame in mini-app/lib/state.ts make delta fixed 1 second instead of based on lastUpdate
