@@ -1,0 +1,68 @@
+
+# 2025-11-24 14:00:11.667537
++Code the following app
++```
++A game called "Bonfire". The user can choose the perform one of three actions, each which has a cooldown time the user has to wait before being able to perform another action. The cooldown timer is shared for all actions, no actions can be performed during the cooldown time.
++- Grow a tree: 20 second cooldown, adds 1 tree to the storage
++- Chop a tree: 5 second cooldown, removes 1 tree from the storage and adds 5 wood to the storage
++- Fuel the fire: 1 second cooldown, removes 1 wood from the storage and adds 1 wood to the fire.
++
++The game starts with 10 trees in the storage, 100 wood in the storage and 0 wood in the fire. Every second the game is updated, every update:
++- If there is wood in the fire, it consumes {fire size}\*0.1 wood, the fire size increases by ({wood in the fire}, 0.5) - {fire size}) / 50.
++- If there is no wood in the fire, the fire size becomes 0 (the fire dies). The fire size can never go bellow 0.
++
++The current tree and wood storage is displayed, as well as the amount of wood in the fire (max 2 decimals) and the current fire size (max 2 decimals). A timer shows how long the fire has been alive (size > 0) for. Once the fire dies, the user should be able to share this time they kept the fire alive for.
++
++The state is shared between all users, store the state variables (tree and wood storage, wood in the fire, fire size, fire alive time, and last update) in a file in file in the lib folder. Make API endpoints for:
++- GET current state (returning the state variables, the variables should always be retrieved from the server)
++- POST perform action (take json data input with userId and action (both strings), call this endpoint when performing an action
++- UPDATE update (runs the game update function, if the last update was more than 0.9 seconds ago)
++
++All users will attempt to call update every second and afterward (even if update failed) fetch the current state and update their local state accordingly,
++
++- Implement and add the game component to the home page.
++- Implement the state variable lib file.
++- Implement the api endpoints.
++- Generate an image for each action that represents it and display it above the respective action.
++- Show the cooldown time (e.g. 20s) on the action button label.
++- Generate an image for the alive fire of various sizes (>0, >2, >4, >6, >10) as well as the dead fire (should not have a flame, only red glow), show this image that matches the current fire big and prominently in the middle of the screen. Make sure all fires have a consistent background (campfire site) and only the size of the flame and the amount of wood changes.
++- The metadata title should be "Bonfire" with description "A social bonfire survivial game". The logo should show a white background simplistic vector fire with a small amount of wood at it's root and the text "Bon" should be hidden in the middle of the fire by having the same text color as the flame itself.
++- Do not leave any work to be done later, implement everything now.
++- There is no need to add files you create to the chat
++```
++
++Generate an app logo and update the app metadata title and description.
+
+# 2025-11-24 14:00:11.763542
++Code the following app
++```
++A game called "Bonfire". The user can choose the perform one of three actions, each which has a cooldown time the user has to wait before being able to perform another action. The cooldown timer is shared for all actions, no actions can be performed during the cooldown time.
++- Grow a tree: 20 second cooldown, adds 1 tree to the storage
++- Chop a tree: 5 second cooldown, removes 1 tree from the storage and adds 5 wood to the storage
++- Fuel the fire: 1 second cooldown, removes 1 wood from the storage and adds 1 wood to the fire.
++
++The game starts with 10 trees in the storage, 100 wood in the storage and 0 wood in the fire. Every second the game is updated, every update:
++- If there is wood in the fire, it consumes {fire size}\*0.1 wood, the fire size increases by ({wood in the fire}, 0.5) - {fire size}) / 50.
++- If there is no wood in the fire, the fire size becomes 0 (the fire dies). The fire size can never go bellow 0.
++
++The current tree and wood storage is displayed, as well as the amount of wood in the fire (max 2 decimals) and the current fire size (max 2 decimals). A timer shows how long the fire has been alive (size > 0) for. Once the fire dies, the user should be able to share this time they kept the fire alive for.
++
++The state is shared between all users, store the state variables (tree and wood storage, wood in the fire, fire size, fire alive time, and last update) in a file in file in the lib folder. Make API endpoints for:
++- GET current state (returning the state variables, the variables should always be retrieved from the server)
++- POST perform action (take json data input with userId and action (both strings), call this endpoint when performing an action
++- UPDATE update (runs the game update function, if the last update was more than 0.9 seconds ago)
++
++All users will attempt to call update every second and afterward (even if update failed) fetch the current state and update their local state accordingly,
++
++- Implement and add the game component to the home page.
++- Implement the state variable lib file.
++- Implement the api endpoints.
++- Generate an image for each action that represents it and display it above the respective action.
++- Show the cooldown time (e.g. 20s) on the action button label.
++- Generate an image for the alive fire of various sizes (>0, >2, >4, >6, >10) as well as the dead fire (should not have a flame, only red glow), show this image that matches the current fire big and prominently in the middle of the screen. Make sure all fires have a consistent background (campfire site) and only the size of the flame and the amount of wood changes.
++- The metadata title should be "Bonfire" with description "A social bonfire survivial game". The logo should show a white background simplistic vector fire with a small amount of wood at it's root and the text "Bon" should be hidden in the middle of the fire by having the same text color as the flame itself.
++- Do not leave any work to be done later, implement everything now.
++- There is no need to add files you create to the chat
++```
++
++Generate an app logo and update the app metadata title and description.
