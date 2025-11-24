@@ -82,3 +82,9 @@
 +In nix/nixos-module.nix add StateDirectory = "mini-app"; to systemd.services.xnode-miniapp-template.serviceConfig
 +
 +In mini-app/lib/state.ts change the state file to be /var/lib/mini-app/state.json
+
+# 2025-11-24 15:01:27.958073
++In mini-app/components/game.tsx you are making a GET call for update, but this should be POST
+
+# 2025-11-24 15:01:27.958435
++In mini-app/components/game.tsx you are making a GET call for update, but this should be POST
