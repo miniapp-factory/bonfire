@@ -40,7 +40,7 @@ export default function Game() {
   useEffect(() => {
     fetchState();
     const interval = setInterval(async () => {
-      await fetch('/api/update');
+      await fetch('/api/update', { method: 'POST' });
       await fetchState();
     }, 1000);
     return () => clearInterval(interval);
