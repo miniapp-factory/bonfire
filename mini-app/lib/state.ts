@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile, rename } from 'fs/promises';
 
 export interface GameState {
   trees: number;
@@ -46,7 +46,9 @@ export async function getState(): Promise<GameState> {
 }
 
 export async function setState(state: GameState): Promise<void> {
-  await writeFile(stateFile, JSON.stringify(state, null, 2));
+  const tempFile = stateFile + '.new';
+  await writeFile(tempFile, JSON.stringify(state, null, 2));
+  await rename(tempFile, stateFile);
 }
 
 export async function performAction(userId: string, action: string): Promise<{ success: boolean; message?: string }> {
