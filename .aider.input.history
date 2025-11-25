@@ -104,3 +104,9 @@
 +In mini-app/lib/state.ts updateGame once the fire dies, fire alive time should reset to 0.
 +
 +In mini-app/components/game.tsx display fire alive time with 0 decimals
+
+# 2025-11-25 09:18:32.639997
++Generate the app logo. The logo should show a white background simplistic vector fire with a small amount of wood at it's root and the text "Bon" should be hidden in the middle of the fire by having the same text color as the flame itself.
+
+# 2025-11-25 09:18:32.640353
++Generate the app logo. The logo should show a white background simplistic vector fire with a small amount of wood at it's root and the text "Bon" should be hidden in the middle of the fire by having the same text color as the flame itself.
