@@ -94,3 +94,13 @@
 
 # 2025-11-24 15:45:34.151787
 +In updateGame in mini-app/lib/state.ts make delta fixed 1 second instead of based on lastUpdate
+
+# 2025-11-25 08:01:40.211049
++In mini-app/lib/state.ts updateGame once the fire dies, fire alive time should reset to 0.
++
++In mini-app/components/game.tsx display fire alive time with 0 decimals
+
+# 2025-11-25 08:01:40.211898
++In mini-app/lib/state.ts updateGame once the fire dies, fire alive time should reset to 0.
++
++In mini-app/components/game.tsx display fire alive time with 0 decimals
