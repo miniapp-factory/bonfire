@@ -63,7 +63,12 @@ export default function Game() {
   return (
     <div className="flex flex-col items-center gap-4">
       <p className="text-xl font-semibold mb-2">Welcome {userId}!</p>
-      <img src={getFireImage()} alt="Fire" className="w-64 h-64" />
+      <div className="relative">
+        {state.fireSize > 0 && (
+          <div className="absolute inset-0 bg-orange-500 opacity-50 rounded-full animate-pulse -z-10" />
+        )}
+        <img src={getFireImage()} alt="Fire" className="w-64 h-64" />
+      </div>
       <div className="text-center">
         <p><span className="text-green-500">Trees</span>: {state.trees}</p>
         <p><span className="text-amber-600">Wood</span> Storage: {state.woodStorage}</p>
