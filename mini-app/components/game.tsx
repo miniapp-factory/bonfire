@@ -67,7 +67,7 @@ export default function Game() {
       <div className="text-center">
         <p><span className="text-green-500">Trees</span>: {state.trees}</p>
         <p><span className="text-amber-600">Wood</span> Storage: {state.woodStorage}</p>
-        <p><span className="text-amber-600">Wood</span> <span className="text-orange-600">Fire</span>: {state.woodInFire.toFixed(2)}</p>
+        <p><span className="text-amber-600">Wood</span> in <span className="text-orange-600">Fire</span>: {state.woodInFire.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
       </div>
