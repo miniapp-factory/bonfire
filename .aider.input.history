@@ -416,3 +416,9 @@
 
 # 2025-11-25 21:33:12.615970
 +In mini-app/lib/state.ts performAction remove userId from the chatMessage, the chatMessage should start with a space
+
+# 2025-11-25 21:40:09.828156
++In mini-app/components/game.tsx make the chat automatically scroll to the bottom when the state chat changes
+
+# 2025-11-25 21:40:09.828593
++In mini-app/components/game.tsx make the chat automatically scroll to the bottom when the state chat changes
