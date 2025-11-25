@@ -54,6 +54,7 @@ export default function Game() {
 
   useEffect(() => {
     if (!state) return;
+    setCooldown(Math.max(0, Math.ceil(((state.cooldownEnd[userId] ?? 0) - Date.now()) / 1000)));
     const interval = setInterval(() => {
       setCooldown(Math.max(0, Math.ceil(((state.cooldownEnd[userId] ?? 0) - Date.now()) / 1000)));
     }, 1000);
