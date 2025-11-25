@@ -392,3 +392,9 @@
 
 # 2025-11-25 20:49:14.283645
 +In mini-app/components/game.tsx make the text of the 3 action buttons size sm
+
+# 2025-11-25 21:13:14.510269
++In mini-app/components/game.tsx make the 3 actions buttons "text-xs"
+
+# 2025-11-25 21:13:14.511204
++In mini-app/components/game.tsx make the 3 actions buttons "text-xs"
