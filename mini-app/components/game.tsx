@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Share } from '@/components/share';
 import { url } from '@/lib/metadata';
+import { useUserId } from '@/components/context/miniapp-provider';
 
 type GameState = {
   trees: number;
@@ -17,6 +18,7 @@ export default function Game() {
   const [state, setState] = useState<GameState | null>(null);
   const [cooldown, setCooldown] = useState(0);
   const [shareTime, setShareTime] = useState<string | null>(null);
+  const userId = useUserId();
 
   const fetchState = async () => {
     const res = await fetch('/api/state');
@@ -32,7 +34,7 @@ export default function Game() {
     await fetch('/api/action', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId: 'demo', action }),
+      body: JSON.stringify({ userId, action }),
     });
     await fetchState();
   };
