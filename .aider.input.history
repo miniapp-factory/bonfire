@@ -304,3 +304,15 @@
 +In mini-app/lib/state.ts cooldown end should be per userId (make is an object instead with userId as key and number or undefined as value, undefined meaning they have no cooldown)
 +
 +Update the perform action function as well as mini-app/components/game.tsx to reflect this change
+
+# 2025-11-25 17:57:13.736753
++In mini-app/components/game.tsx
++
++- Remove setCooldown from getState
++- Instead make a useEffect that triggers on state change and starts an interval to update setCooldown every second, stopping the interval once the useEffect unmounts
+
+# 2025-11-25 17:57:13.737139
++In mini-app/components/game.tsx
++
++- Remove setCooldown from getState
++- Instead make a useEffect that triggers on state change and starts an interval to update setCooldown every second, stopping the interval once the useEffect unmounts
