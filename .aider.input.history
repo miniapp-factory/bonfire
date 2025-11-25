@@ -380,3 +380,9 @@
 
 # 2025-11-25 20:22:27.632669
 +In mini-app/components/game.tsx under "Watching the Fire" add a share button with the text `I need your help maintaining the fire! {url}`
+
+# 2025-11-25 20:33:37.052934
++In mini-app/components/game.tsx center the share button horizontally
+
+# 2025-11-25 20:33:37.054124
++In mini-app/components/game.tsx center the share button horizontally
