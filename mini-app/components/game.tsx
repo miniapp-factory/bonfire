@@ -32,6 +32,11 @@ export default function Game() {
   };
 
   const [newMessage, setNewMessage] = useState('');
+  const watchingCount = state
+    ? Object.values(state.cooldownEnd).filter(
+        (v) => v && v < Date.now() - 5 * 60 * 1000
+      ).length
+    : 0;
   const { longestFire, biggestFire, actions } = state?.records ?? {
     longestFire: 0,
     biggestFire: 0,
@@ -78,7 +83,6 @@ export default function Game() {
   if (!state) return null;
 
   const getFireImage = () => {
-      const watchingCount = Object.values(state.cooldownEnd).filter(v => v && v < Date.now() - 5 * 60 * 1000).length;
     const size = state.fireSize;
     if (size > 10) return '/fire-10.png';
     if (size > 6) return '/fire-6.png';
