@@ -134,3 +134,15 @@
 +
 +- Display Welcome ${userId}! above the fire image. 
 +- In the state overview, color the word "Trees" green, the word "Wood" brown and the word "Fire" orange
+
+# 2025-11-25 10:34:16.162822
++In mini-app/components/game.tsx
++
++- "Wood in Fire" should have "Fire" in orange
++- Display the already generated images for each of the actions above the respective action
+
+# 2025-11-25 10:34:16.163785
++In mini-app/components/game.tsx
++
++- "Wood in Fire" should have "Fire" in orange
++- Display the already generated images for each of the actions above the respective action
