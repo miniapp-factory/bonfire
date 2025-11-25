@@ -170,3 +170,15 @@
 
 # 2025-11-25 12:14:57.458557
 +In mini-app/components/game.tsx I cannot see the background glow, it should expand past the image
+
+# 2025-11-25 12:23:13.802901
++In mini-app/components/game.tsx
++
++- Remove opacity-50 from the fire background glow and use bg-orange-500/50 instead
++- Reduce rounded-full on the fire background glow to rounded-lg
+
+# 2025-11-25 12:23:13.803451
++In mini-app/components/game.tsx
++
++- Remove opacity-50 from the fire background glow and use bg-orange-500/50 instead
++- Reduce rounded-full on the fire background glow to rounded-lg
