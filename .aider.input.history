@@ -374,3 +374,9 @@
 
 # 2025-11-25 20:13:32.658274
 +In mini-app/components/game.tsx remove shareTime and all references to it
+
+# 2025-11-25 20:22:27.625157
++In mini-app/components/game.tsx under "Watching the Fire" add a share button with the text `I need your help maintaining the fire! {url}`
+
+# 2025-11-25 20:22:27.632669
++In mini-app/components/game.tsx under "Watching the Fire" add a share button with the text `I need your help maintaining the fire! {url}`
