@@ -9,6 +9,7 @@ export interface GameState {
   fireAliveTime: number;
   lastUpdate: number;
   cooldownEnd: number;
+  chat: { userId: string; message: string; date: number }[];
 }
 
 const stateFile = '/var/lib/mini-app/state.json';
@@ -26,6 +27,7 @@ export async function getState(): Promise<GameState> {
       fireAliveTime: 0,
       lastUpdate: Date.now(),
       cooldownEnd: 0,
+      chat: [],
     };
     await writeFile(stateFile, JSON.stringify(initial, null, 2));
     return initial;
@@ -64,6 +66,16 @@ export async function performAction(userId: string, action: string): Promise<{ s
   }
   await setState(state);
   return { success: true };
+}
+
+export async function addChatMessage(userId: string, message: string): Promise<void> {
+  const state = await getState();
+  const newMsg = { userId, message, date: Date.now() };
+  state.chat.push(newMsg);
+  if (state.chat.length > 10) {
+    state.chat.shift();
+  }
+  await setState(state);
 }
 
 export async function updateGame(): Promise<void> {

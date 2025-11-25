@@ -39,6 +39,18 @@ export default function Game() {
     await fetchState();
   };
 
+  const [newMessage, setNewMessage] = useState('');
+  const sendChat = async () => {
+    if (!newMessage.trim()) return;
+    await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, message: newMessage }),
+    });
+    setNewMessage('');
+    await fetchState();
+  };
+
   useEffect(() => {
     fetchState();
     const interval = setInterval(async () => {
@@ -99,6 +111,29 @@ export default function Game() {
       {shareTime && (
         <Share text={`I kept the fire alive for ${shareTime} in Bonfire! ${url}`} />
       )}
+      <div className="w-full max-w-md mt-4">
+        <h3 className="text-lg font-semibold mb-2">Chat</h3>
+        <div className="space-y-2 max-h-60 overflow-y-auto bg-muted p-2 rounded">
+          {state.chat.map((msg, idx) => (
+            <div key={idx} className="p-2 bg-background rounded">
+              <span className="text-xs text-muted-foreground">{new Date(msg.date).toLocaleTimeString()}</span>{' '}
+              <strong>{msg.userId}:</strong> {msg.message}
+            </div>
+          ))}
+        </div>
+        <div className="flex mt-2">
+          <input
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            className="flex-1 border rounded p-1"
+            placeholder="Type a message"
+          />
+          <Button onClick={sendChat} className="ml-2">
+            Send
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
