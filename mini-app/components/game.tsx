@@ -111,19 +111,19 @@ export default function Game() {
       <div className="flex gap-4">
         <div className="flex flex-col items-center gap-1">
           <img src="/grow-tree.png" alt="Grow Tree" className="w-16 h-16" />
-          <Button onClick={() => perform('grow')} disabled={cooldown > 0}>
+          <Button size="sm" onClick={() => perform('grow')} disabled={cooldown > 0}>
             Grow Tree {cooldown > 0 && `(${cooldown}s)`}
           </Button>
         </div>
         <div className="flex flex-col items-center gap-1">
           <img src="/chop-tree.png" alt="Chop Tree" className="w-16 h-16" />
-          <Button onClick={() => perform('chop')} disabled={cooldown > 0}>
+          <Button size="sm" onClick={() => perform('chop')} disabled={cooldown > 0}>
             Chop Tree {cooldown > 0 && `(${cooldown}s)`}
           </Button>
         </div>
         <div className="flex flex-col items-center gap-1">
           <img src="/fuel-fire.png" alt="Fuel Fire" className="w-16 h-16" />
-          <Button onClick={() => perform('fuel')} disabled={cooldown > 0}>
+          <Button size="sm" onClick={() => perform('fuel')} disabled={cooldown > 0}>
             Fuel Fire {cooldown > 0 && `(${cooldown}s)`}
           </Button>
         </div>
