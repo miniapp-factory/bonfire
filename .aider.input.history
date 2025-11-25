@@ -386,3 +386,9 @@
 
 # 2025-11-25 20:33:37.054124
 +In mini-app/components/game.tsx center the share button horizontally
+
+# 2025-11-25 20:49:14.281860
++In mini-app/components/game.tsx make the text of the 3 action buttons size sm
+
+# 2025-11-25 20:49:14.283645
++In mini-app/components/game.tsx make the text of the 3 action buttons size sm
