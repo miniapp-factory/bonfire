@@ -356,3 +356,9 @@
 
 # 2025-11-25 19:07:19.087268
 +In mini-app/components/game.tsx under "Fire Alive Time" add "Watching the Fire" with fire in orange color and with the count being amount of users that have a cooldownEnd of more than 5 minutes ago.
+
+# 2025-11-25 19:56:18.338536
++In mini-app/components/game.tsx make watchingCount a useMemo variable, updating on state change, and count all that have an absolute difference less than 5 minutes
+
+# 2025-11-25 19:56:18.339588
++In mini-app/components/game.tsx make watchingCount a useMemo variable, updating on state change, and count all that have an absolute difference less than 5 minutes
