@@ -410,3 +410,9 @@
 +- "is watching a tree grow, don't count on them for a while"
 +- "is swinging their axe around, be careful not to get close"
 +- "is stoking up the fire!"
+
+# 2025-11-25 21:33:12.614395
++In mini-app/lib/state.ts performAction remove userId from the chatMessage, the chatMessage should start with a space
+
+# 2025-11-25 21:33:12.615970
++In mini-app/lib/state.ts performAction remove userId from the chatMessage, the chatMessage should start with a space
