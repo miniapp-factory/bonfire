@@ -164,3 +164,9 @@
 
 # 2025-11-25 12:01:21.856422
 +In mini-app/components/game.tsx put an animated orange glow behind the fire image while the fire is on (size > 0)
+
+# 2025-11-25 12:14:57.458139
++In mini-app/components/game.tsx I cannot see the background glow, it should expand past the image
+
+# 2025-11-25 12:14:57.458557
++In mini-app/components/game.tsx I cannot see the background glow, it should expand past the image
