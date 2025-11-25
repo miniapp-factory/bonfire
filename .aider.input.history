@@ -182,3 +182,15 @@
 +
 +- Remove opacity-50 from the fire background glow and use bg-orange-500/50 instead
 +- Reduce rounded-full on the fire background glow to rounded-lg
+
+# 2025-11-25 12:37:57.697634
++In mini-app/components/game.tsx
++
++- Change the fire background glow "bg-orange-500/50" to 'bg-orange-500"
++- Change "Wood Storage" to "Wood in Storage", keep wood the same color and use the same default color for in as for storage
+
+# 2025-11-25 12:37:57.709199
++In mini-app/components/game.tsx
++
++- Change the fire background glow "bg-orange-500/50" to 'bg-orange-500"
++- Change "Wood Storage" to "Wood in Storage", keep wood the same color and use the same default color for in as for storage
