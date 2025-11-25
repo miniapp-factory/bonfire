@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Share } from '@/components/share';
-import { url } from '@/lib/metadata';
 import { useUserId } from '@/components/context/miniapp-provider';
 import { GameState } from '@/lib/state';
 
@@ -10,16 +8,12 @@ import { GameState } from '@/lib/state';
 export default function Game() {
   const [state, setState] = useState<GameState | null>(null);
   const [cooldown, setCooldown] = useState(0);
-  const [shareTime, setShareTime] = useState<string | null>(null);
   const userId = useUserId();
 
   const fetchState = async () => {
     const res = await fetch('/api/state');
     const data = await res.json();
     setState(data);
-    if (data.fireSize === 0 && data.fireAliveTime > 0) {
-      setShareTime(`${data.fireAliveTime.toFixed(2)}s`);
-    }
   };
 
   const perform = async (action: string) => {
@@ -131,9 +125,6 @@ export default function Game() {
           </Button>
         </div>
       </div>
-      {shareTime && (
-        <Share text={`I kept the fire alive for ${shareTime} in Bonfire! ${url}`} />
-      )}
       <div className="w-full max-w-md mt-4">
         <h3 className="text-lg font-semibold mb-2">Chat</h3>
         <div className="space-y-2 max-h-60 overflow-y-auto bg-muted p-2 rounded">
