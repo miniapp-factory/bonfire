@@ -158,3 +158,9 @@
 
 # 2025-11-25 11:28:38.894232
 +In mini-app/components/game.tsx the state showcase should say "Wood in Fire" instead of "Wood Fire". "in" should use the default text color, while "Wood" and "Fire" should keep their current color.
+
+# 2025-11-25 12:01:21.856084
++In mini-app/components/game.tsx put an animated orange glow behind the fire image while the fire is on (size > 0)
+
+# 2025-11-25 12:01:21.856422
++In mini-app/components/game.tsx put an animated orange glow behind the fire image while the fire is on (size > 0)
