@@ -284,3 +284,13 @@
 +Regenerate the following image files (create a .png.todo file with size 512x512):
 +fire-dead.png: a realistic with a black background of a tiny pile of wood at the bottom of the image
 +fire-2.png: a realistic with a black background of a small pile of wood at the bottom of the image. The wood is on fire, but the flame is just getting started
+
+# 2025-11-25 16:06:28.449162
++- In mini-app/lib/state.ts add the chat property to state, chat should be an array of { userId: string, message: string, date: number }, initially empty. Add a function to add a message to the chat and create an api endpoint for it (POST, taking userId and message as inputs). If after adding the chat length exceeds 10, remove the oldest message.
++
++- in mini-app/components/game.tsx add a chatbox, it should showcase the time, userId and message of the chat, as well as have an input at the bottom to write a message and a button to add it to the chat (by calling the api endpoint).
+
+# 2025-11-25 16:06:28.449807
++- In mini-app/lib/state.ts add the chat property to state, chat should be an array of { userId: string, message: string, date: number }, initially empty. Add a function to add a message to the chat and create an api endpoint for it (POST, taking userId and message as inputs). If after adding the chat length exceeds 10, remove the oldest message.
++
++- in mini-app/components/game.tsx add a chatbox, it should showcase the time, userId and message of the chat, as well as have an input at the bottom to write a message and a button to add it to the chat (by calling the api endpoint).
