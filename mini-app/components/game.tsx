@@ -41,7 +41,7 @@ export default function Game() {
   const getLeaderboard = (action: keyof typeof actions) => {
     const entries = Object.entries(actions).map(([uid, counts]) => ({
       uid,
-      count: counts[action] ?? 0,
+      count: counts[action as keyof typeof counts] ?? 0,
     }));
     entries.sort((a, b) => b.count - a.count);
     return entries;
