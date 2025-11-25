@@ -1,4 +1,3 @@
-import { join } from 'path';
 import { readFile, writeFile } from 'fs/promises';
 
 export interface GameState {

@@ -32,7 +32,7 @@ export default function Game() {
   };
 
   const [newMessage, setNewMessage] = useState('');
-  const { longestFire, biggestFire, actions } = state.records ?? {
+  const { longestFire, biggestFire, actions } = state?.records ?? {
     longestFire: 0,
     biggestFire: 0,
     actions: {},
