@@ -62,13 +62,14 @@ export default function Game() {
 
   return (
     <div className="flex flex-col items-center gap-4">
+      <p className="text-xl font-semibold mb-2">Welcome {userId}!</p>
       <img src={getFireImage()} alt="Fire" className="w-64 h-64" />
       <div className="text-center">
-        <p>Trees: {state.trees}</p>
-        <p>Wood Storage: {state.woodStorage}</p>
-        <p>Wood in Fire: {state.woodInFire.toFixed(2)}</p>
-        <p>Fire Size: {state.fireSize.toFixed(2)}</p>
-        <p>Fire Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
+        <p><span className="text-green-500">Trees</span>: {state.trees}</p>
+        <p><span className="text-amber-600">Wood</span> Storage: {state.woodStorage}</p>
+        <p><span className="text-amber-600">Wood</span> in Fire: {state.woodInFire.toFixed(2)}</p>
+        <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
+        <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
       </div>
       <div className="flex gap-2">
         <Button onClick={() => perform('grow')} disabled={cooldown > 0}>
