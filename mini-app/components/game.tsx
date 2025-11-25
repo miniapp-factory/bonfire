@@ -1,5 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
+import { Share } from '@/components/share';
+import { url } from '@/lib/metadata';
 import { Button } from '@/components/ui/button';
 import { useUserId } from '@/components/context/miniapp-provider';
 import { GameState } from '@/lib/state';
@@ -104,6 +106,7 @@ export default function Game() {
         <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
         <p><span>Watching the </span><span className="text-orange-600">Fire</span>: {watchingCount}</p>
+        <Share text={`I need your help maintaining the fire! ${url}`} />
       </div>
       <div className="flex gap-4">
         <div className="flex flex-col items-center gap-1">
