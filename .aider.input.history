@@ -194,3 +194,13 @@
 +
 +- Change the fire background glow "bg-orange-500/50" to 'bg-orange-500"
 +- Change "Wood Storage" to "Wood in Storage", keep wood the same color and use the same default color for in as for storage
+
+# 2025-11-25 12:52:07.587658
++In mini-app/components/game.tsx
++
++- Change the fire background glow "bg-orange-500" to 'bg-orange-200" and change "-m-4" to "-m-2"
+
+# 2025-11-25 12:52:07.588060
++In mini-app/components/game.tsx
++
++- Change the fire background glow "bg-orange-500" to 'bg-orange-200" and change "-m-4" to "-m-2"
