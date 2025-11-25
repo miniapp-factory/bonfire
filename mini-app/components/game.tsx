@@ -65,7 +65,7 @@ export default function Game() {
       <p className="text-xl font-semibold mb-2">Welcome {userId}!</p>
       <div className="relative">
         {state.fireSize > 0 && (
-          <div className="absolute inset-0 -m-4 bg-orange-500 rounded-lg animate-pulse -z-10" />
+          <div className="absolute inset-0 -m-2 bg-orange-200 rounded-lg animate-pulse -z-10" />
         )}
         <img src={getFireImage()} alt="Fire" className="w-64 h-64" />
       </div>
