@@ -10,6 +10,14 @@ export interface GameState {
   lastUpdate: number;
   cooldownEnd: Record<string, number | undefined>;
   chat: { userId: string; message: string; date: number }[];
+  records: {
+    longestFire: number;
+    biggestFire: number;
+    actions: Record<
+      string,
+      { grow: number; chop: number; fuel: number }
+    >;
+  };
 }
 
 const stateFile = '/var/lib/mini-app/state.json';
@@ -28,6 +36,11 @@ export async function getState(): Promise<GameState> {
       lastUpdate: Date.now(),
       cooldownEnd: {},
       chat: [],
+      records: {
+        longestFire: 0,
+        biggestFire: 0,
+        actions: {},
+      },
     };
     await writeFile(stateFile, JSON.stringify(initial, null, 2));
     return initial;
@@ -64,6 +77,10 @@ export async function performAction(userId: string, action: string): Promise<{ s
     default:
       return { success: false, message: 'Unknown action' };
   }
+  // Update action counts
+  const userActions = state.records.actions[userId] ?? { grow: 0, chop: 0, fuel: 0 };
+  userActions[action as keyof typeof userActions] += 1;
+  state.records.actions[userId] = userActions;
   await setState(state);
   return { success: true };
 }

@@ -32,6 +32,20 @@ export default function Game() {
   };
 
   const [newMessage, setNewMessage] = useState('');
+  const { longestFire, biggestFire, actions } = state.records ?? {
+    longestFire: 0,
+    biggestFire: 0,
+    actions: {},
+  };
+
+  const getLeaderboard = (action: keyof typeof actions) => {
+    const entries = Object.entries(actions).map(([uid, counts]) => ({
+      uid,
+      count: counts[action] ?? 0,
+    }));
+    entries.sort((a, b) => b.count - a.count);
+    return entries;
+  };
   const sendChat = async () => {
     if (!newMessage.trim()) return;
     await fetch('/api/chat', {
@@ -133,6 +147,37 @@ export default function Game() {
           <Button onClick={sendChat} className="ml-2">
             Send
           </Button>
+        </div>
+      </div>
+      <div className="w-full max-w-md mt-4">
+        <h3 className="text-lg font-semibold mb-2">Hall of Fame</h3>
+        <p>Longest Fire: {longestFire.toFixed(0)}s</p>
+        <p>Biggest Fire: {biggestFire.toFixed(2)}</p>
+        <div className="mt-4">
+          <h4 className="font-semibold">Grow Tree Leaderboard</h4>
+          <ol className="list-decimal pl-4">
+            {getLeaderboard('grow').slice(0, 5).map((e) => (
+              <li key={e.uid}>
+                {e.uid}: {e.count}
+              </li>
+            ))}
+          </ol>
+          <h4 className="font-semibold mt-2">Chop Tree Leaderboard</h4>
+          <ol className="list-decimal pl-4">
+            {getLeaderboard('chop').slice(0, 5).map((e) => (
+              <li key={e.uid}>
+                {e.uid}: {e.count}
+              </li>
+            ))}
+          </ol>
+          <h4 className="font-semibold mt-2">Fuel Fire Leaderboard</h4>
+          <ol className="list-decimal pl-4">
+            {getLeaderboard('fuel').slice(0, 5).map((e) => (
+              <li key={e.uid}>
+                {e.uid}: {e.count}
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
