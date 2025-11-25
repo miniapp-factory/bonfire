@@ -316,3 +316,9 @@
 +
 +- Remove setCooldown from getState
 +- Instead make a useEffect that triggers on state change and starts an interval to update setCooldown every second, stopping the interval once the useEffect unmounts
+
+# 2025-11-25 18:06:19.030448
++In mini-app/components/game.tsx in the setCooldown useEffect, trigger the new setCooldown right away (no wait), in addition to scheduling it with setInterval
+
+# 2025-11-25 18:06:19.031366
++In mini-app/components/game.tsx in the setCooldown useEffect, trigger the new setCooldown right away (no wait), in addition to scheduling it with setInterval
