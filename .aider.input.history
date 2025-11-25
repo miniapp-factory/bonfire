@@ -146,3 +146,9 @@
 +
 +- "Wood in Fire" should have "Fire" in orange
 +- Display the already generated images for each of the actions above the respective action
+
+# 2025-11-25 10:40:59.371649
++In mini-app/components/game.tsx the action images are placed to the left of the action button, place them above the action button instead
+
+# 2025-11-25 10:40:59.372027
++In mini-app/components/game.tsx the action images are placed to the left of the action button, place them above the action button instead
