@@ -322,3 +322,25 @@
 
 # 2025-11-25 18:06:19.031366
 +In mini-app/components/game.tsx in the setCooldown useEffect, trigger the new setCooldown right away (no wait), in addition to scheduling it with setInterval
+
+# 2025-11-25 18:31:56.311666
++In mini-app/lib/state.ts
++- add the records property to the state
++- keep track of: longest fire, biggest fire, and per userId the total amount of times they have performed each of the 3 actions
++- update the functions to update the records appropriately
++
++In mini-app/components/game.tsx
++- Under the chat add the "Hall of Fame"
++- Display longest fire and biggest fire records
++- Display 3 leaderboards showing the top 5 users that performed each action the most, with their current total. If they user isn't listed in the top 5, show their rank and total on the row underneath.
+
+# 2025-11-25 18:31:56.313221
++In mini-app/lib/state.ts
++- add the records property to the state
++- keep track of: longest fire, biggest fire, and per userId the total amount of times they have performed each of the 3 actions
++- update the functions to update the records appropriately
++
++In mini-app/components/game.tsx
++- Under the chat add the "Hall of Fame"
++- Display longest fire and biggest fire records
++- Display 3 leaderboards showing the top 5 users that performed each action the most, with their current total. If they user isn't listed in the top 5, show their rank and total on the row underneath.
