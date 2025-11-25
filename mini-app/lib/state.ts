@@ -112,6 +112,13 @@ export async function updateGame(): Promise<void> {
     state.fireSize = 0;
     state.fireAliveTime = 0;
   }
+  // Update records for longest and biggest fire
+  if (state.fireAliveTime > state.records.longestFire) {
+    state.records.longestFire = state.fireAliveTime;
+  }
+  if (state.fireSize > state.records.biggestFire) {
+    state.records.biggestFire = state.fireSize;
+  }
   state.lastUpdate = now;
   await setState(state);
 }
