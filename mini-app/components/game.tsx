@@ -32,11 +32,13 @@ export default function Game() {
   };
 
   const [newMessage, setNewMessage] = useState('');
-  const watchingCount = state
-    ? Object.values(state.cooldownEnd).filter(
-        (v) => v && v < Date.now() - 5 * 60 * 1000
-      ).length
-    : 0;
+  const watchingCount = useMemo(() => {
+    if (!state) return 0;
+    const now = Date.now();
+    return Object.values(state.cooldownEnd).filter(
+      (v) => v && Math.abs(v - now) < 5 * 60 * 1000
+    ).length;
+  }, [state]);
   const { longestFire, biggestFire, actions } = state?.records ?? {
     longestFire: 0,
     biggestFire: 0,
