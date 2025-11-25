@@ -362,3 +362,9 @@
 
 # 2025-11-25 19:56:18.339588
 +In mini-app/components/game.tsx make watchingCount a useMemo variable, updating on state change, and count all that have an absolute difference less than 5 minutes
+
+# 2025-11-25 20:06:11.095102
++In mini-app/components/game.tsx "Watching the Fire" should have only "Fire" being orange, "Watching the" should be standard text color
+
+# 2025-11-25 20:06:11.095536
++In mini-app/components/game.tsx "Watching the Fire" should have only "Fire" being orange, "Watching the" should be standard text color
