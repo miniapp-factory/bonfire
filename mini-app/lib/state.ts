@@ -81,6 +81,7 @@ export async function updateGame(): Promise<void> {
     }
   } else {
     state.fireSize = 0;
+    state.fireAliveTime = 0;
   }
   state.lastUpdate = now;
   await setState(state);

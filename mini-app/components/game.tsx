@@ -66,7 +66,7 @@ export default function Game() {
         <p>Wood Storage: {state.woodStorage}</p>
         <p>Wood in Fire: {state.woodInFire.toFixed(2)}</p>
         <p>Fire Size: {state.fireSize.toFixed(2)}</p>
-        <p>Fire Alive Time: {state.fireAliveTime.toFixed(2)}s</p>
+        <p>Fire Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
       </div>
       <div className="flex gap-2">
         <Button onClick={() => perform('grow')} disabled={cooldown > 0}>
