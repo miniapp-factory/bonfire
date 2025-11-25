@@ -398,3 +398,15 @@
 
 # 2025-11-25 21:13:14.511204
 +In mini-app/components/game.tsx make the 3 actions buttons "text-xs"
+
+# 2025-11-25 21:24:05.979339
++Add a message to the chat every time a user performs an action, the message is based on the action:
++- "is watching a tree grow, don't count on them for a while"
++- "is swinging their axe around, be careful not to get close"
++- "is stoking up the fire!"
+
+# 2025-11-25 21:24:05.979938
++Add a message to the chat every time a user performs an action, the message is based on the action:
++- "is watching a tree grow, don't count on them for a while"
++- "is swinging their axe around, be careful not to get close"
++- "is stoking up the fire!"
