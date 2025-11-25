@@ -344,3 +344,9 @@
 +- Under the chat add the "Hall of Fame"
 +- Display longest fire and biggest fire records
 +- Display 3 leaderboards showing the top 5 users that performed each action the most, with their current total. If they user isn't listed in the top 5, show their rank and total on the row underneath.
+
+# 2025-11-25 18:51:24.833235
++In mini-app/lib/state.ts getState function remove the writeFile line
+
+# 2025-11-25 18:51:24.833619
++In mini-app/lib/state.ts getState function remove the writeFile line
