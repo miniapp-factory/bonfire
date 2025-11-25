@@ -116,3 +116,9 @@
 
 # 2025-11-25 09:31:31.897933
 +Create a hook useUserId that returns context.user.username (string | undefined) from mini-app/components/context/miniapp-provider.tsx useMiniAppContext if it's not undefined, if it's undefined generate a random userId using a combination of (Daring, Bold, Courageous, Fearless, Brave) and (Goat, Eagle, Bull, Hamster, Chicken) and a random number between 0 and 999. Save the generated userId in local storage so the same user will get the same idea upon revising the website, there is no need to save or load the userId if context.user.username is not undefined.
+
+# 2025-11-25 09:37:11.998992
++In mini-app/components/game.tsx use the userUserId hook and pass it to /api/action as userId instead of "demo"
+
+# 2025-11-25 09:37:11.999385
++In mini-app/components/game.tsx use the userUserId hook and pass it to /api/action as userId instead of "demo"
