@@ -9,6 +9,21 @@ export interface MiniAppContext {
   context: Context.MiniAppContext | undefined;
   isInMiniApp: boolean | undefined;
 }
+export function useUserId() {
+  const { context } = useMiniAppContext();
+  const username = context?.user?.username;
+  if (username) return username;
+  const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('miniapp_userId') : null;
+  if (stored) return stored;
+  const adjectives = ['Daring', 'Bold', 'Courageous', 'Fearless', 'Brave'];
+  const animals = ['Goat', 'Eagle', 'Bull', 'Hamster', 'Chicken'];
+  const randomNumber = () => Math.floor(Math.random() * 1000);
+  const userId = `${adjectives[Math.floor(Math.random() * adjectives.length)]}${animals[Math.floor(Math.random() * animals.length)]}${randomNumber()}`;
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem('miniapp_userId', userId);
+  }
+  return userId;
+}
 const defaultSettings: MiniAppContext = {
   sdk,
   context: undefined,
