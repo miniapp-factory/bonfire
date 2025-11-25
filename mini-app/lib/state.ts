@@ -41,7 +41,6 @@ export async function getState(): Promise<GameState> {
         actions: {},
       },
     };
-    await writeFile(stateFile, JSON.stringify(initial, null, 2));
     return initial;
   }
 }
