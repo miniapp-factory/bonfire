@@ -71,19 +71,25 @@ export default function Game() {
         <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
       </div>
-      <div className="flex gap-2">
-        <img src="/grow-tree.png" alt="Grow Tree" className="w-16 h-16" />
-        <Button onClick={() => perform('grow')} disabled={cooldown > 0}>
-          Grow Tree {cooldown > 0 && `(${cooldown}s)`}
-        </Button>
-        <img src="/chop-tree.png" alt="Chop Tree" className="w-16 h-16" />
-        <Button onClick={() => perform('chop')} disabled={cooldown > 0}>
-          Chop Tree {cooldown > 0 && `(${cooldown}s)`}
-        </Button>
-        <img src="/fuel-fire.png" alt="Fuel Fire" className="w-16 h-16" />
-        <Button onClick={() => perform('fuel')} disabled={cooldown > 0}>
-          Fuel Fire {cooldown > 0 && `(${cooldown}s)`}
-        </Button>
+      <div className="flex gap-4">
+        <div className="flex flex-col items-center gap-1">
+          <img src="/grow-tree.png" alt="Grow Tree" className="w-16 h-16" />
+          <Button onClick={() => perform('grow')} disabled={cooldown > 0}>
+            Grow Tree {cooldown > 0 && `(${cooldown}s)`}
+          </Button>
+        </div>
+        <div className="flex flex-col items-center gap-1">
+          <img src="/chop-tree.png" alt="Chop Tree" className="w-16 h-16" />
+          <Button onClick={() => perform('chop')} disabled={cooldown > 0}>
+            Chop Tree {cooldown > 0 && `(${cooldown}s)`}
+          </Button>
+        </div>
+        <div className="flex flex-col items-center gap-1">
+          <img src="/fuel-fire.png" alt="Fuel Fire" className="w-16 h-16" />
+          <Button onClick={() => perform('fuel')} disabled={cooldown > 0}>
+            Fuel Fire {cooldown > 0 && `(${cooldown}s)`}
+          </Button>
+        </div>
       </div>
       {shareTime && (
         <Share text={`I kept the fire alive for ${shareTime} in Bonfire! ${url}`} />
