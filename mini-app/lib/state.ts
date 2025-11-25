@@ -82,10 +82,10 @@ export async function performAction(userId: string, action: string): Promise<{ s
   // Add chat message based on action
   const chatMessage =
     action === 'grow'
-      ? `${userId} is watching a tree grow, don't count on them for a while`
+      ? ` is watching a tree grow, don't count on them for a while`
       : action === 'chop'
-      ? `${userId} is swinging their axe around, be careful not to get close`
-      : `${userId} is stoking up the fire!`;
+      ? ` is swinging their axe around, be careful not to get close`
+      : ` is stoking up the fire!`;
   state.chat.push({ userId, message: chatMessage, date: Date.now() });
   if (state.chat.length > 10) {
     state.chat.shift();
