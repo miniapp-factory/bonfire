@@ -8,7 +8,7 @@ export interface GameState {
   fireSize: number;
   fireAliveTime: number;
   lastUpdate: number;
-  cooldownEnd: number;
+  cooldownEnd: Record<string, number | undefined>;
   chat: { userId: string; message: string; date: number }[];
 }
 
@@ -26,7 +26,7 @@ export async function getState(): Promise<GameState> {
       fireSize: 0,
       fireAliveTime: 0,
       lastUpdate: Date.now(),
-      cooldownEnd: 0,
+      cooldownEnd: {},
       chat: [],
     };
     await writeFile(stateFile, JSON.stringify(initial, null, 2));
@@ -41,25 +41,25 @@ export async function setState(state: GameState): Promise<void> {
 export async function performAction(userId: string, action: string): Promise<{ success: boolean; message?: string }> {
   const state = await getState();
   const now = Date.now();
-  if (now < state.cooldownEnd) {
+  if (now < (state.cooldownEnd[userId] ?? 0)) {
     return { success: false, message: 'Cooldown active' };
   }
   switch (action) {
     case 'grow':
       state.trees += 1;
-      state.cooldownEnd = now + 20000;
+      state.cooldownEnd[userId] = now + 20000;
       break;
     case 'chop':
       if (state.trees <= 0) return { success: false, message: 'No trees' };
       state.trees -= 1;
       state.woodStorage += 5;
-      state.cooldownEnd = now + 5000;
+      state.cooldownEnd[userId] = now + 5000;
       break;
     case 'fuel':
       if (state.woodStorage <= 0) return { success: false, message: 'No wood' };
       state.woodStorage -= 1;
       state.woodInFire += 1;
-      state.cooldownEnd = now + 1000;
+      state.cooldownEnd[userId] = now + 1000;
       break;
     default:
       return { success: false, message: 'Unknown action' };

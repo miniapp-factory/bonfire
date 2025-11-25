@@ -17,7 +17,7 @@ export default function Game() {
     const res = await fetch('/api/state');
     const data = await res.json();
     setState(data);
-    setCooldown(Math.max(0, Math.ceil((data.cooldownEnd - Date.now()) / 1000)));
+    setCooldown(Math.max(0, Math.ceil(((data.cooldownEnd[userId] ?? 0) - Date.now()) / 1000)));
     if (data.fireSize === 0 && data.fireAliveTime > 0) {
       setShareTime(`${data.fireAliveTime.toFixed(2)}s`);
     }
