@@ -4,15 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Share } from '@/components/share';
 import { url } from '@/lib/metadata';
 import { useUserId } from '@/components/context/miniapp-provider';
+import { GameState } from '@/lib/state';
 
-type GameState = {
-  trees: number;
-  woodStorage: number;
-  woodInFire: number;
-  fireSize: number;
-  fireAliveTime: number;
-  cooldownEnd: number;
-};
 
 export default function Game() {
   const [state, setState] = useState<GameState | null>(null);
