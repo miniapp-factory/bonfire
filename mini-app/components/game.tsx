@@ -109,7 +109,7 @@ export default function Game() {
         <p><span className="text-amber-600">Wood</span> in <span className="text-orange-600">Fire</span>: {state.woodInFire.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
-        <p><span className="text-orange-600">Watching the Fire</span>: {watchingCount}</p>
+        <p><span>Watching the </span><span className="text-orange-600">Fire</span>: {watchingCount}</p>
       </div>
       <div className="flex gap-4">
         <div className="flex flex-col items-center gap-1">
