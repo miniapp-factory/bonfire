@@ -122,3 +122,15 @@
 
 # 2025-11-25 09:37:11.999385
 +In mini-app/components/game.tsx use the userUserId hook and pass it to /api/action as userId instead of "demo"
+
+# 2025-11-25 09:56:05.008053
++In mini-app/components/game.tsx
++
++- Display Welcome ${userId}! above the fire image. 
++- In the state overview, color the word "Trees" green, the word "Wood" brown and the word "Fire" orange
+
+# 2025-11-25 09:56:05.008844
++In mini-app/components/game.tsx
++
++- Display Welcome ${userId}! above the fire image. 
++- In the state overview, color the word "Trees" green, the word "Wood" brown and the word "Fire" orange
