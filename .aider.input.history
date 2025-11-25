@@ -368,3 +368,9 @@
 
 # 2025-11-25 20:06:11.095536
 +In mini-app/components/game.tsx "Watching the Fire" should have only "Fire" being orange, "Watching the" should be standard text color
+
+# 2025-11-25 20:13:32.657405
++In mini-app/components/game.tsx remove shareTime and all references to it
+
+# 2025-11-25 20:13:32.658274
++In mini-app/components/game.tsx remove shareTime and all references to it
