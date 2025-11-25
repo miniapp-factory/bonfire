@@ -110,3 +110,9 @@
 
 # 2025-11-25 09:18:32.640353
 +Generate the app logo. The logo should show a white background simplistic vector fire with a small amount of wood at it's root and the text "Bon" should be hidden in the middle of the fire by having the same text color as the flame itself.
+
+# 2025-11-25 09:31:31.897239
++Create a hook useUserId that returns context.user.username (string | undefined) from mini-app/components/context/miniapp-provider.tsx useMiniAppContext if it's not undefined, if it's undefined generate a random userId using a combination of (Daring, Bold, Courageous, Fearless, Brave) and (Goat, Eagle, Bull, Hamster, Chicken) and a random number between 0 and 999. Save the generated userId in local storage so the same user will get the same idea upon revising the website, there is no need to save or load the userId if context.user.username is not undefined.
+
+# 2025-11-25 09:31:31.897933
++Create a hook useUserId that returns context.user.username (string | undefined) from mini-app/components/context/miniapp-provider.tsx useMiniAppContext if it's not undefined, if it's undefined generate a random userId using a combination of (Daring, Bold, Courageous, Fearless, Brave) and (Goat, Eagle, Bull, Hamster, Chicken) and a random number between 0 and 999. Save the generated userId in local storage so the same user will get the same idea upon revising the website, there is no need to save or load the userId if context.user.username is not undefined.
