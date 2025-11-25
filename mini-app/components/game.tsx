@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { Share } from '@/components/share';
 import { url } from '@/lib/metadata';
 import { Button } from '@/components/ui/button';
@@ -28,6 +28,7 @@ export default function Game() {
   };
 
   const [newMessage, setNewMessage] = useState('');
+  const chatRef = useRef<HTMLDivElement>(null);
   const watchingCount = useMemo(() => {
     if (!state) return 0;
     const now = Date.now();
@@ -77,6 +78,12 @@ export default function Game() {
     }, 1000);
     return () => clearInterval(interval);
   }, [state, userId]);
+
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [state?.chat]);
 
   if (!state) return null;
 
@@ -130,7 +137,7 @@ export default function Game() {
       </div>
       <div className="w-full max-w-md mt-4">
         <h3 className="text-lg font-semibold mb-2">Chat</h3>
-        <div className="space-y-2 max-h-60 overflow-y-auto bg-muted p-2 rounded">
+        <div ref={chatRef} className="space-y-2 max-h-60 overflow-y-auto bg-muted p-2 rounded">
           {state.chat.map((msg, idx) => (
             <div key={idx} className="p-2 bg-background rounded">
               <span className="text-xs text-muted-foreground">{new Date(msg.date).toLocaleTimeString()}</span>{' '}
