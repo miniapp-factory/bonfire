@@ -78,6 +78,7 @@ export default function Game() {
   if (!state) return null;
 
   const getFireImage = () => {
+      const watchingCount = Object.values(state.cooldownEnd).filter(v => v && v < Date.now() - 5 * 60 * 1000).length;
     const size = state.fireSize;
     if (size > 10) return '/fire-10.png';
     if (size > 6) return '/fire-6.png';
@@ -102,6 +103,7 @@ export default function Game() {
         <p><span className="text-amber-600">Wood</span> in <span className="text-orange-600">Fire</span>: {state.woodInFire.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Size: {state.fireSize.toFixed(2)}</p>
         <p><span className="text-orange-600">Fire</span> Alive Time: {state.fireAliveTime.toFixed(0)}s</p>
+        <p><span className="text-orange-600">Watching the Fire</span>: {watchingCount}</p>
       </div>
       <div className="flex gap-4">
         <div className="flex flex-col items-center gap-1">
