@@ -17,7 +17,6 @@ export default function Game() {
     const res = await fetch('/api/state');
     const data = await res.json();
     setState(data);
-    setCooldown(Math.max(0, Math.ceil(((data.cooldownEnd[userId] ?? 0) - Date.now()) / 1000)));
     if (data.fireSize === 0 && data.fireAliveTime > 0) {
       setShareTime(`${data.fireAliveTime.toFixed(2)}s`);
     }
@@ -52,6 +51,14 @@ export default function Game() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (!state) return;
+    const interval = setInterval(() => {
+      setCooldown(Math.max(0, Math.ceil(((state.cooldownEnd[userId] ?? 0) - Date.now()) / 1000)));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [state, userId]);
 
   if (!state) return null;
 
