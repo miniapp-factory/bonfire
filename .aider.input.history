@@ -440,3 +440,9 @@
 +
 +- In setState before renaming the new file as the state file, rename the current state file as .backup. 
 +- In getState if getting an error reading the state file, try to read the state from the .backup file instead
+
+# 2025-11-26 12:12:37.607293
++In mini-app/lib/state.ts setState also read the current state file, only if it parses as valid json, move it to backup
+
+# 2025-11-26 12:12:37.607691
++In mini-app/lib/state.ts setState also read the current state file, only if it parses as valid json, move it to backup
