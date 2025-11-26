@@ -53,8 +53,10 @@ export async function getState(): Promise<GameState> {
 export async function setState(state: GameState): Promise<void> {
   const tempFile = stateFile + '.new';
   await writeFile(tempFile, JSON.stringify(state, null, 2));
-  // backup current state file
+  // backup current state file if it contains valid JSON
   try {
+    const currentData = await readFile(stateFile, 'utf-8');
+    JSON.parse(currentData);
     await rename(stateFile, stateFile + '.backup');
   } catch {}
   await rename(tempFile, stateFile);
