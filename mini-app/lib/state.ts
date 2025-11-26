@@ -26,28 +26,37 @@ export async function getState(): Promise<GameState> {
     const data = await readFile(stateFile, 'utf-8');
     return JSON.parse(data) as GameState;
   } catch {
-    const initial: GameState = {
-      trees: 10,
-      woodStorage: 100,
-      woodInFire: 0,
-      fireSize: 0,
-      fireAliveTime: 0,
-      lastUpdate: Date.now(),
-      cooldownEnd: {},
-      chat: [],
-      records: {
-        longestFire: 0,
-        biggestFire: 0,
-        actions: {},
-      },
-    };
-    return initial;
+    try {
+      const backupData = await readFile(stateFile + '.backup', 'utf-8');
+      return JSON.parse(backupData) as GameState;
+    } catch {
+      const initial: GameState = {
+        trees: 10,
+        woodStorage: 100,
+        woodInFire: 0,
+        fireSize: 0,
+        fireAliveTime: 0,
+        lastUpdate: Date.now(),
+        cooldownEnd: {},
+        chat: [],
+        records: {
+          longestFire: 0,
+          biggestFire: 0,
+          actions: {},
+        },
+      };
+      return initial;
+    }
   }
 }
 
 export async function setState(state: GameState): Promise<void> {
   const tempFile = stateFile + '.new';
   await writeFile(tempFile, JSON.stringify(state, null, 2));
+  // backup current state file
+  try {
+    await rename(stateFile, stateFile + '.backup');
+  } catch {}
   await rename(tempFile, stateFile);
 }
 
