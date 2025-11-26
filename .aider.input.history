@@ -428,3 +428,15 @@
 
 # 2025-11-25 21:56:32.871357
 +In mini-app/lib/state.ts in setState instead of writing to state.json directly, write to state.new.json and then (if successful) rename state.new.json to state.json
+
+# 2025-11-26 12:01:51.008525
++In mini-app/lib/state.ts 
++
++- In setState before renaming the new file as the state file, rename the current state file as .backup. 
++- In getState if getting an error reading the state file, try to read the state from the .backup file instead
+
+# 2025-11-26 12:01:51.009488
++In mini-app/lib/state.ts 
++
++- In setState before renaming the new file as the state file, rename the current state file as .backup. 
++- In getState if getting an error reading the state file, try to read the state from the .backup file instead
